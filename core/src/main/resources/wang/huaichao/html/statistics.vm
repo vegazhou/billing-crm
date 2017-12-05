@@ -1,0 +1,284 @@
+<table class="page-header">
+    <tr>
+        <td class="ta-l">$config.payeeName</td>
+        <td class="ta-r">账单编号：$config.billNo</td>
+    </tr>
+</table>
+
+<p class="title">${config.payeeName}服务账单明细</p>
+
+
+<table class="recp-info">
+    <tr>
+        <td>计费周期：</td>
+        <td>${config.startTime} 至 ${config.endTime}</td>
+    </tr>
+    <tr>
+        <td>客户编号：</td>
+        <td>$config.payerNo</td>
+    </tr>
+    <tr>
+        <td>客户名称：</td>
+        <td>${config.payerName}</td>
+    </tr>
+</table>
+
+###########################################################################
+## pstn
+###########################################################################
+#set($pstnHostUsage = $config.pstnHostUsage)
+#set($pstnUsageMap = $pstnHostUsage.hostOneSiteUsageMap)
+#set($multipleSites = $pstnHostUsage.siteNameSet.size() > 1)
+#if($pstnUsageMap.size() > 0)
+
+<br/><br/><br/>
+电话会议费用（按使用量）
+<br/><br/>
+
+<table>
+    <thead>
+    <tr>
+        <th>主持人账号</th>
+        #if($multipleSites)
+            <th>站点名称</th>
+        #end
+        <th class="ta-r" style="width: 50px;">场次</th>
+        <th class="ta-r" style="width: 140px;">电话会议时长（分钟）</th>
+        <th class="ta-r" style="width: 70px;">金额（元）</th>
+    </tr>
+    </thead>
+    <tbody>
+        #foreach ($entry in $pstnUsageMap.entrySet())
+            #set($usage = $entry.value)
+        <tr>
+            <td>$usage.hostName</td>
+            #if($multipleSites)
+                <td>$usage.siteName</td>
+            #end
+            <td class="ta-r">$usage.getCount()</td>
+            <td class="ta-r">$numberTool.format('#,###', $usage.minutes)</td>
+            <td class="ta-r">$numberTool.format('#,##0.00', $usage.fee)</td>
+        </tr>
+        #end
+
+    <tr>
+        <td>合计：</td>
+        #if($multipleSites)
+            <td></td>
+        #end
+        <td class="ta-r">$pstnHostUsage.meetingCount</td>
+        <td class="ta-r">$numberTool.format('#,###', $pstnHostUsage.totalMinutes)</td>
+        <td class="ta-r">$numberTool.format('#,##0.00', $pstnHostUsage.totalCost.floatValue())</td>
+    </tr>
+    </tbody>
+</table>
+#end
+
+
+###########################################################################
+## data
+###########################################################################
+#set($dataHostUsage = $config.dataHostUsage)
+#set($dataUsageMap = $dataHostUsage.hostOneSiteUsageMap)
+#set($multipleSites = $dataHostUsage.siteNameSet.size() > 1)
+#if($dataUsageMap.size() > 0)
+
+<br/><br/><br/>
+数据会议费用（按使用量）
+<br/><br/>
+
+<table>
+    <thead>
+    <tr>
+        <th>主持人账号</th>
+        #if($multipleSites)
+            <th>站点名称</th>
+        #end
+        <th class="ta-r" style="width: 50px;">场次</th>
+        <th class="ta-r" style="width: 140px;">数据会议时长（分钟）</th>
+        <th class="ta-r" style="width: 70px;">金额（元）</th>
+    </tr>
+    </thead>
+    <tbody>
+        #foreach ($entry in $dataUsageMap.entrySet())
+            #set($usage = $entry.value)
+        <tr>
+            <td>$usage.hostName</td>
+            #if($multipleSites)
+                <td>$usage.siteName</td>
+            #end
+            <td class="ta-r">$usage.getCount()</td>
+            <td class="ta-r">$numberTool.format('#,##0',$usage.minutes)</td>
+            <td class="ta-r">$numberTool.format('#,##0.00', $usage.fee)</td>
+        </tr>
+        #end
+
+    <tr>
+        <td>合计：</td>
+        #if($multipleSites)
+            <td></td>
+        #end
+        <td class="ta-r">$dataHostUsage.meetingCount</td>
+        <td class="ta-r">$numberTool.format('#,###', $dataHostUsage.totalMinutes)</td>
+        <td class="ta-r">$numberTool.format('#,##0.00', $dataHostUsage.totalCost.floatValue())</td>
+    </tr>
+    </tbody>
+</table>
+#end
+
+
+###########################################################################
+## data monthly pay
+###########################################################################
+
+
+#set($productUsage = $config.productUsage)
+#set($productMonthlyFeeMap = $productUsage.productMonthlyFeeMap)
+#if($productMonthlyFeeMap.size() > 0)
+
+<br/><br/><br/>
+数据会议费用（包月）
+<br/><br/>
+<table>
+    <thead>
+    <tr>
+        <th>产品</th>
+        <th>站点</th>
+        <th class="ta-r" style="width: 100px;">方数/账户数</th>
+        <th class="ta-r" style="width: 70px;">单价（元）</th>
+##        <th class="ta-r" style="width: 70px;">金额（元）</th>
+    </tr>
+    </thead>
+    <tbody>
+        #foreach($entry in $productMonthlyFeeMap.entrySet())
+            #set($fee = $entry.value)
+            #set($num = $fee.hosts + $fee.ports)
+        <tr>
+            <td>$fee.productName</td>
+            <td>$fee.siteName</td>
+            <td class="ta-r">$num</td>
+            <td class="ta-r">$numberTool.format('#,##0.00', $fee.price.floatValue())</td>
+##            <td class="ta-r">$numberTool.format('#,##0.00', $fee.getCost())</td>
+        </tr>
+        #end
+
+##    <tr>
+##        <td colspan="4">合计：</td>
+##        <td class="ta-r">$numberTool.format('#,##0.00', $productUsage.totalFee.floatValue())</td>
+##    </tr>
+    </tbody>
+</table>
+#end
+
+##<p class="page-break"></p>
+
+
+#set($siteFeeMap = $config.siteFeeMap)
+#if($siteFeeMap.size() > 0)
+<br/><br/><br/>
+溢出费用
+<br/><br/>
+<table>
+    <thead>
+    <tr>
+        <th>站点名称</th>
+        <th class="ta-r">购买方数</th>
+        <th class="ta-r">最大使用方数</th>
+        <th class="ta-r">溢出方数</th>
+        <th class="ta-r">溢出费用（元）</th>
+    </tr>
+    </thead>
+    <tbody>
+        #foreach($entry in $siteFeeMap.entrySet())
+            #set($overflow = $entry.value)
+            #set($overflowports = $overflow.usedPorts - $overflow.totalPorts)
+        <tr>
+            <td>$overflow.siteName</td>
+            <td class="ta-r">$overflow.totalPorts</td>
+            <td class="ta-r">$overflow.usedPorts</td>
+            <td class="ta-r">$overflowports</td>
+            <td class="ta-r">$numberTool.format('#,##0.00', $overflow.overflowFee)</td>
+        </tr>
+        #end
+    <tr>
+        <td colspan="4">合计：</td>
+        <td class="ta-r">$numberTool.format('#,##0.00', $config.overflowFee)</td>
+    </tr>
+    </tbody>
+</table>
+#end
+
+
+
+#set($sitePortsOverflowStatisticsMap = $config.sitePortsOverflowStatisticsMap)
+#if($sitePortsOverflowStatisticsMap.size() > 0)
+<br/><br/><br/>
+最大溢出方数统计
+<br/><br/>
+    #foreach($entry in $sitePortsOverflowStatisticsMap.entrySet())
+        #set($site = $entry.value)
+        #set($confrencePortsOverflowStatisticsMap = $site.confrencePortsOverflowStatisticsMap)
+
+    <p>站点：$entry.key，并发峰值时间：$dateTool.format('yyyy-MM-dd HH:mm:ss',$site.peakTime)</p>
+    <table>
+        <thead>
+        <tr>
+            <th>会议主题</th>
+            <th>用户</th>
+            <th>账号</th>
+            <th style="width: 50px">与会人数</th>
+        </tr>
+        </thead>
+
+        #foreach($entry in $confrencePortsOverflowStatisticsMap.entrySet())
+            #set($confstat = $entry.value)
+            <tr>
+                <td>$confstat.confName</td>
+                <td>$confstat.userName</td>
+                <td>$confstat.userEmail</td>
+                <td>$confstat.attendees</td>
+            </tr>
+        #end
+
+        <tr>
+            <td colspan="3">最大并发数：</td>
+            <td>$site.peakNum</td>
+        </tr>
+    </table>
+    #end
+#end
+
+
+#set($storageFeeMap = $config.siteStorageUsageFee)
+#if($storageFeeMap.size() > 0)
+<br/><br/><br/>
+存储溢出费用
+<br/><br/>
+<table>
+    <thead>
+    <tr>
+        <th>站点</th>
+        <th>购买存储(G)</th>
+        <th>使用存储(G)</th>
+        <th>溢出存储(G)</th>
+        <th>单价/5G</th>
+        <th>存储费用</th>
+    </tr>
+    </thead>
+
+    #foreach($entry in $storageFeeMap.entrySet())
+        #set($storageFee = $entry.value)
+
+        <tr>
+            <td>$storageFee.siteName</td>
+            <td>$storageFee.orderSize</td>
+            <td>$storageFee.usedSize</td>
+            <td>$storageFee.overflowSize</td>
+            <td>$numberTool.format('#,##0.00', $storageFee.price)</td>
+            <td>$numberTool.format('#,##0.00', $storageFee.fee)</td>
+        </tr>
+    #end
+
+</table>
+
+#end

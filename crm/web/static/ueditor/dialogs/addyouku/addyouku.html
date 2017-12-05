@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>mydialog</title>
+    <script type="text/javascript" src="../internal.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style type="text/css">
+	body{ padding:10px; margin:0;}
+    #insertHtml{
+        margin: 10px 0px 0px 10px;
+        width: 370px;
+        height: 220px;
+    }
+	table,td,tr{ border-collapse: collapse; border-spacing: 0; border:none;}
+	ul,li{margin: 0; padding: 0; list-style:none;}
+	ul{ margin:10px 0 10px 10px;}
+	li{ padding:5px 0;}
+	#spwidth,#spheight{ width:32px;}
+	a{ text-decoration:none; color:#00578f}
+    </style>
+</head>
+<body>
+<table border="1">
+  <tr> 
+    <td width="360" id="ykvideo"><iframe frameborder="0" id="ykvideoIframe" src="http://player.youku.com/embed/XNzUwMTgxNTYw"  width="300" height="240" flashvars="isAutoPlay=false&winType=interior" id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true"></iframe></td>
+    <td width="220" valign="top">
+    	<ul>
+			<li>视频来源：
+				<select id="viedoSourceId" style="width:150px">
+					<option value="1">优酷视频</option>
+					<option value="2">腾讯视频</option>
+					<option value="3">56视频</option>
+					<!-- <option value="4">酷6视频</option>-->
+				</select>
+			</li>	
+        	<li>视频地址：
+              <input name="ykid" type="text" id="ykid" size="35" value="" placeholder="请输入视频地址！" class="required">
+              <span id="ykidMsgTip"></span>
+        	</li>
+            <!--<li>是否自动播放: <input type="checkbox" id="isauto"> 是</li>
+            --><li>视频大小 <input type="text" id="spwidth" value="300">×<input type="text" id="spheight" value="240"></li>
+            
+            <li>
+            <font color="blue">提示：视频地址格式：http://v.youku.com/v_show/id_XODQ4MzgzNzYw.html</font>
+            </li>
+        </ul>
+    </td>
+  </tr>
+</table>
+<script type="text/javascript">
+	
+	$("#ykid").blur(function(spnrText){
+		 var spnrText="";
+		 if ($("#ykid").val()){
+			var auto="false";
+			if ($("#isauto").is(":checked")){
+				auto="true";
+			}
+			var viedoSourceId = $("#viedoSourceId").val();
+			spnrText = getSwfUrl(viedoSourceId,$("#ykid").val());
+			
+			$("#ykvideoIframe").attr("src",spnrText);
+		}         
+  });
+	
+    dialog.onok = function(){
+    	var spnr="";
+    	var spnrIframe="";
+        // 插入内容到编辑器
+        var viedoSourceId = $("#viedoSourceId").val();
+		if ($("#ykid").val()){
+			var auto="false";
+			if ($("#isauto").is(":checked")){auto="true"}
+			spnr = getSwfUrl(viedoSourceId,$("#ykid").val());
+		}
+		if(spnr==""){
+			spnrIframe="";
+		}else{
+			
+		spnrIframe ='<iframe frameborder="0" id="ykvideoIframe" src="'+spnr+'"  width="300" height="240" flashvars="isAutoPlay=false&winType=interior"'
+		 + ' id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true"></iframe></td> ';
+		}
+		 //console.log( " spnrIframe  " ,spnrIframe );
+        editor.execCommand('inserthtml',spnrIframe);
+    }
+    
+    //根据input框 选择框获取数据项
+    function getSwfUrl(id,ykidVal){
+    	var spnr="";
+    	//优酷视频
+		if(id=="1"){
+			//视频格式：http://v.youku.com/v_show/id_XODQ4MzgzNzYw.html?from=y1.3-idx-grid-1519-9909.87141-87139-87714-87129.1-1
+			if(ykidVal.indexOf("id_") < 0){
+				$("#ykidMsgTip").html("<font color=red >您输入的视频地址与选择的视频源不匹配，请重输！</font>");
+				return "";
+			}else{
+				$("#ykidMsgTip").html("");
+				var yksplitVal = ykidVal.split("id_");
+				var ykidStr = yksplitVal[1].split(".html")[0]
+				//console.log("======ykidStr========" , ykidStr);
+				spnr = "http://player.youku.com/embed/"+ykidStr;
+			}
+			
+		}
+		//腾讯视频
+		if(id=="2"){
+			// 两种格式 
+			//1、http://v.qq.com/cover/g/gdp7bjp05tk9cmf/j0015pzdh1g.html
+			//2、http://v.qq.com/prev/k/krgs7ffu7d4grqk.html?vid=s0015923vvn&
+			var ykidStr="";
+			
+			if(ykidVal.indexOf("http") >= 0){
+				$("#ykidMsgTip").html("");
+				//console.log("   腾讯格式2 ： ", ykidVal.indexOf("vid"));
+				if(ykidVal.indexOf("vid") >= 0){
+					ykidStr = ykidVal.split("vid=")[1];
+					//console.log("  ykidStr方式2 : " , ykidStr);
+				}else{
+					var yksplitVal = ykidVal.split("/");
+					ykidStr = yksplitVal[yksplitVal.length-1].split(".")[0]
+					//console.log("  ykidStr 方式1 : " , ykidStr);
+				}
+				spnr = "http://v.qq.com/iframe/player.html?vid="+ykidStr;
+			}else{
+				$("#ykidMsgTip").html("<font color=red >您输入的视频地址与选择的视频源不匹配，请重输！</font>");
+			}
+			//spnr = '<embed src="http://static.video.qq.com/TencentPlayer.swf?vid='+ykidStr+'&auto=0&outhost=http://cf.qq.com/" type="application/x-shockwave-flash" width="'+$("#spwidth").val()+'" height="'+$("#spheight").val()+'" quality="high" allowfullscreen="true"/>';
+		}
+		//56视频
+		if(id=="3"){
+			//56视频 http://www.56.com/u37/v_MTMzNjc0MTM4.html
+			if(ykidVal.indexOf("v_") < 0){
+				$("#ykidMsgTip").html("<font color=red >您输入的视频地址与选择的视频源不匹配，请重输！</font>");
+				return "";
+			}else{
+				$("#ykidMsgTip").html("");
+				//spnr = '<embed type="application/x-shockwave-flash" src="http://www.iqiyi.com/player/20130812164748/Player.swf?vid='+$("#ykid").val()+'&autoplay=false" width="675" height="480" id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true" />'
+				var ykidStr = ykidVal.split("v_")[1].split(".html")[0];
+				//console.log("======ykidStr========" , ykidStr);
+				spnr = "http://www.56.com/iframe/"+ykidStr;
+			}
+			
+		}
+		//酷六视频
+		if(id=="4"){
+			//酷六视频格式：http://v.ku6.com/show/l2qI4gM-S8Mz8-PSpIpwBg...html?csrc=13_34_1
+			//console.log("=======ykidVal==========" , ykidVal);
+			var spstr = ykidVal.split("/");
+			if(spstr[spstr.length-1].indexOf("...") <=0){
+				$("#ykidMsgTip").html("<font color=red >您输入的内容不是有效的网络地址，请重新输入！</font>");
+				return "";
+			}
+			$("#ykidMsgTip").html("");
+			var viedoFormate = spstr[spstr.length-1].split("...");	
+			//'<embed type="application/x-shockwave-flash" src="http://player.ku6cdn.com/default/out/pV2.7.3.swf?vid=rMD1Bd_YY3Bw8vUORKR9tQ..&auto=1&ver=108&jump=0&api=1&color=0&deflogo=0&flag=hd&adss=0&type=v" rel="external nofollow" id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true" />';
+			//spnr = '<embed type="application/x-shockwave-flash" src="http://www.iqiyi.com/player/20130812164748/Player.swf?vid='++'&autoplay=false" rel="external nofollow"  width="'+$("#spwidth").val()+'" height="'+$("#spheight").val()+'" id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true" />'
+			spnr = '<embed type="application/x-shockwave-flash" src="http://player.ku6cdn.com/default/out/pV2.7.3.swf?vid='+$("#ykid").val()+'&auto=1&ver=108&jump=0&api=1&color=0&deflogo=0&flag=hd&adss=0&type=v" rel="external nofollow"   width="'+$("#spwidth").val()+'" height="'+$("#spheight").val()+'" id="movie_player" quality="high" allowscriptaccess="always" allowfullscreen="true" />'
+		}
+		return spnr;
+    }
+    </script>
+
+</body>
+</html>

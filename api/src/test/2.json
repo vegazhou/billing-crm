@@ -1,0 +1,664 @@
+
+
+
+
+{
+  "pageNumber": "7",
+  "sites": [
+    {
+      "companyName": "深圳速必达商务服务有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "19007",
+      "siteStatus": "Active",
+      "siteURL": "tclsbd.webex.com.cn"
+    },
+    {
+      "companyName": "湖北省长江合志股权投资基金管理有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "24892",
+      "siteStatus": "Active",
+      "siteURL": "tclcapital.webex.com.cn"
+    },
+    {
+      "companyName": "湖北银河信息技术学院",
+      "partnerName": "sky-tech",
+      "siteId": "26767",
+      "siteStatus": "Active",
+      "siteURL": "yinheedu.webex.com.cn"
+    },
+    {
+      "companyName": "湖南洋光在线教育科技有限责任公司",
+      "partnerName": "sky-tech",
+      "siteId": "22262",
+      "siteStatus": "Active",
+      "siteURL": "e-youngo.webex.com.cn"
+    },
+    {
+      "companyName": "源澈科技开发（深圳） 有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26067",
+      "siteStatus": "Active",
+      "siteURL": "rancherlabs.webex.com.cn"
+    },
+    {
+      "companyName": "濮阳市德众汽车销售服务有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26277",
+      "siteStatus": "Active",
+      "siteURL": "dzqc.webex.com.cn"
+    },
+    {
+      "companyName": "灵北（北京）医药信息咨询有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26677",
+      "siteStatus": "Active",
+      "siteURL": "lbyy.webex.com.cn"
+    },
+    {
+      "companyName": "爱尔眼科医院集团",
+      "partnerName": "sky-tech",
+      "siteId": "26472",
+      "siteStatus": "Active",
+      "siteURL": "aierchina.webex.com.cn"
+    },
+    {
+      "companyName": "爱沙尼亚的设计公司",
+      "partnerName": "sky-tech",
+      "siteId": "18197",
+      "siteStatus": "Active",
+      "siteURL": "hmfzh.webex.com.cn"
+    },
+    {
+      "companyName": "珠海世纪鼎利科技股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21837",
+      "siteStatus": "Active",
+      "siteURL": "sjdl.webex.com.cn"
+    },
+    {
+      "companyName": "珠海世纪鼎利科技股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21842",
+      "siteStatus": "Active",
+      "siteURL": "sjdl2.webex.com.cn"
+    },
+    {
+      "companyName": "珠海佳米科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "24032",
+      "siteStatus": "Active",
+      "siteURL": "ejiahe.webex.com.cn"
+    },
+    {
+      "companyName": "珠海健帆生物科技股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26622",
+      "siteStatus": "Active",
+      "siteURL": "jianfan.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克开服务测试",
+      "partnerName": "sky-tech",
+      "siteId": "25617",
+      "siteStatus": "Active",
+      "siteURL": "ktrktest-20160919.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克开服务测试",
+      "partnerName": "sky-tech",
+      "siteId": "25917",
+      "siteStatus": "Active",
+      "siteURL": "ktrkprovtest-20160927.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克开服务测试",
+      "partnerName": "sky-tech",
+      "siteId": "25932",
+      "siteStatus": "Active",
+      "siteURL": "ktrkprovtest-20190928001.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克开服务测试",
+      "partnerName": "sky-tech",
+      "siteId": "25947",
+      "siteStatus": "Active",
+      "siteURL": "ktrkprovtest-20160928ports125.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克开服务测试",
+      "partnerName": "sky-tech",
+      "siteId": "26072",
+      "siteStatus": "Active",
+      "siteURL": "ktrkprovtest-20160929upselling.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克测试20160526",
+      "partnerName": "sky-tech",
+      "siteId": "22222",
+      "siteStatus": "Active",
+      "siteURL": "ktrktest20160526.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克测试20160606",
+      "partnerName": "sky-tech",
+      "siteId": "25057",
+      "siteStatus": "Active",
+      "siteURL": "ktrktest20160606.webex.com.cn"
+    },
+    {
+      "companyName": "瑞克测试20160908",
+      "partnerName": "sky-tech",
+      "siteId": "25377",
+      "siteStatus": "Active",
+      "siteURL": "ktrktest20160908.webex.com.cn"
+    },
+    {
+      "companyName": "瑞斯康微电子（深圳）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21137",
+      "siteStatus": "Active",
+      "siteURL": "risecomm.webex.com.cn"
+    },
+    {
+      "companyName": "甘肃丹尼尔商贸有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21072",
+      "siteStatus": "Active",
+      "siteURL": "gs-dannier.webex.com.cn"
+    },
+    {
+      "companyName": "盈峰投资控股集团有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21407",
+      "siteStatus": "Active",
+      "siteURL": "infore.webex.com.cn"
+    },
+    {
+      "companyName": "盈峰投资控股集团有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22542",
+      "siteStatus": "Active",
+      "siteURL": "infore50.webex.com.cn"
+    },
+    {
+      "companyName": "睿峰网云（北京）科技股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "17707",
+      "siteStatus": "Active",
+      "siteURL": "upm.webex.com.cn"
+    },
+    {
+      "companyName": "祥云软件",
+      "partnerName": "sky-tech",
+      "siteId": "26362",
+      "siteStatus": "Active",
+      "siteURL": "xiangyun.webex.com.cn"
+    },
+    {
+      "companyName": "福建省汽车工业集团云度新能源汽车股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23982",
+      "siteStatus": "Active",
+      "siteURL": "yudoauto.webex.com.cn"
+    },
+    {
+      "companyName": "福建金科信息技术股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26157",
+      "siteStatus": "Active",
+      "siteURL": "goldtech.webex.com.cn"
+    },
+    {
+      "companyName": "福特中国",
+      "partnerName": "sky-tech",
+      "siteId": "26237",
+      "siteStatus": "Active",
+      "siteURL": "ford.webex.com.cn"
+    },
+    {
+      "companyName": "科大讯飞股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23682",
+      "siteStatus": "Active",
+      "siteURL": "iflytek.webex.com.cn"
+    },
+    {
+      "companyName": "科天EC测试",
+      "partnerName": "sky-tech",
+      "siteId": "20592",
+      "siteStatus": "Active",
+      "siteURL": "ktyectest0318.webex.com.cn"
+    },
+    {
+      "companyName": "科天测试-PureVOIP",
+      "partnerName": "sky-tech",
+      "siteId": "26327",
+      "siteStatus": "Active",
+      "siteURL": "ktrktest20161013.webex.com.cn"
+    },
+    {
+      "companyName": "科天测试001公司（国际PSTN）",
+      "partnerName": "sky-tech",
+      "siteId": "21322",
+      "siteStatus": "Active",
+      "siteURL": "ktynewectest.webex.com.cn"
+    },
+    {
+      "companyName": "科天视畅CMR测试",
+      "partnerName": "sky-tech",
+      "siteId": "26417",
+      "siteStatus": "Active",
+      "siteURL": "cmr-test2.webex.com.cn"
+    },
+    {
+      "companyName": "科林利康医药研究有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26672",
+      "siteStatus": "Active",
+      "siteURL": "kllk.webex.com.cn"
+    },
+    {
+      "companyName": "秦小康",
+      "partnerName": "sky-tech",
+      "siteId": "15417",
+      "siteStatus": "Active",
+      "siteURL": "rancher.webex.com.cn"
+    },
+    {
+      "companyName": "第一物业（北京）股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22362",
+      "siteStatus": "Active",
+      "siteURL": "firstcare2.webex.com.cn"
+    },
+    {
+      "companyName": "第一物业（北京）股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22367",
+      "siteStatus": "Active",
+      "siteURL": "firstcare1.webex.com.cn"
+    },
+    {
+      "companyName": "维特根机械",
+      "partnerName": "sky-tech",
+      "siteId": "24887",
+      "siteStatus": "Active",
+      "siteURL": "wirtgen.webex.com.cn"
+    },
+    {
+      "companyName": "罗莱生活科技股份有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "25052",
+      "siteStatus": "Active",
+      "siteURL": "luolai.webex.com.cn"
+    },
+    {
+      "companyName": "美国国际青年成就中国公司北京代表处",
+      "partnerName": "sky-tech",
+      "siteId": "21932",
+      "siteStatus": "Active",
+      "siteURL": "jachina.webex.com.cn"
+    },
+    {
+      "companyName": "羿科安全设备（上海）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21712",
+      "siteStatus": "Active",
+      "siteURL": "aegle.webex.com.cn"
+    },
+    {
+      "companyName": "翱旗创业（北京）科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23307",
+      "siteStatus": "Active",
+      "siteURL": "ecmc2520160701001.webex.com.cn"
+    },
+    {
+      "companyName": "聂雯娴",
+      "partnerName": "sky-tech",
+      "siteId": "23112",
+      "siteStatus": "Active",
+      "siteURL": "speakmandarin.webex.com.cn"
+    },
+    {
+      "companyName": "自然阳光(上海)日用品有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23312",
+      "siteStatus": "Active",
+      "siteURL": "naturessunshine.webex.com.cn"
+    },
+    {
+      "companyName": "苏州世纪福",
+      "partnerName": "sky-tech",
+      "siteId": "26802",
+      "siteStatus": "Active",
+      "siteURL": "sifo.webex.com.cn"
+    },
+    {
+      "companyName": "苏州测试OFFER1",
+      "partnerName": "sky-tech",
+      "siteId": "24222",
+      "siteStatus": "Active",
+      "siteURL": "szoffer3.webex.com.cn"
+    },
+    {
+      "companyName": "苏州瀚川自动化科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "19507",
+      "siteStatus": "Active",
+      "siteURL": "szhc.webex.com.cn"
+    },
+    {
+      "companyName": "苏州科天测试二",
+      "partnerName": "sky-tech",
+      "siteId": "21327",
+      "siteStatus": "Active",
+      "siteURL": "ktynewectest1.webex.com.cn"
+    },
+    {
+      "companyName": "苏州贝文金融信息服务有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "25877",
+      "siteStatus": "Active",
+      "siteURL": "shenghao.webex.com.cn"
+    },
+    {
+      "companyName": "苏州辉腾精密模塑有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "18042",
+      "siteStatus": "Active",
+      "siteURL": "phaetonchina.webex.com.cn"
+    },
+    {
+      "companyName": "英联马利（北京）食品销售有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26797",
+      "siteStatus": "Active",
+      "siteURL": "abmauri.webex.com.cn"
+    },
+    {
+      "companyName": "茉莉特（深圳）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "17192",
+      "siteStatus": "Active",
+      "siteURL": "mtx.webex.com.cn"
+    },
+    {
+      "companyName": "薪得付信息技术（上海）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21102",
+      "siteStatus": "Active",
+      "siteURL": "cdp.webex.com.cn"
+    },
+    {
+      "companyName": "财新传媒有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26222",
+      "siteStatus": "Active",
+      "siteURL": "caixin.webex.com.cn"
+    },
+    {
+      "companyName": "贵州九阳网络科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "24552",
+      "siteStatus": "Active",
+      "siteURL": "wengfu.webex.com.cn"
+    },
+    {
+      "companyName": "迪卡侬",
+      "partnerName": "sky-tech",
+      "siteId": "26432",
+      "siteStatus": "Active",
+      "siteURL": "decathlon1.webex.com.cn"
+    },
+    {
+      "companyName": "迪卡侬",
+      "partnerName": "sky-tech",
+      "siteId": "26607",
+      "siteStatus": "Active",
+      "siteURL": "decathlon.webex.com.cn"
+    },
+    {
+      "companyName": "通力电子控股有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22027",
+      "siteStatus": "Active",
+      "siteURL": "tcltl.webex.com.cn"
+    },
+    {
+      "companyName": "道生天合材料（上海）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26632",
+      "siteStatus": "Active",
+      "siteURL": "techstormcorp.webex.com.cn"
+    },
+    {
+      "companyName": "重庆丰鼎科技有限责任公司",
+      "partnerName": "sky-tech",
+      "siteId": "18422",
+      "siteStatus": "Active",
+      "siteURL": "kj01.webex.com.cn"
+    },
+    {
+      "companyName": "重庆修业科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22827",
+      "siteStatus": "Active",
+      "siteURL": "xiuyegroup.webex.com.cn"
+    },
+    {
+      "companyName": "重庆协云信息技术有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26592",
+      "siteStatus": "Active",
+      "siteURL": "chcmu.webex.com.cn"
+    },
+    {
+      "companyName": "量子创客教育咨询（大连）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26427",
+      "siteStatus": "Active",
+      "siteURL": "lzck.webex.com.cn"
+    },
+    {
+      "companyName": "金日制药（中国）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21847",
+      "siteStatus": "Active",
+      "siteURL": "jinri.webex.com.cn"
+    },
+    {
+      "companyName": "金红叶纸业集团有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23692",
+      "siteStatus": "Active",
+      "siteURL": "ghy.webex.com.cn"
+    },
+    {
+      "companyName": "销售部Roc",
+      "partnerName": "sky-tech",
+      "siteId": "15662",
+      "siteStatus": "Active",
+      "siteURL": "skyrocy.webex.com.cn"
+    },
+    {
+      "companyName": "销售部Roc",
+      "partnerName": "sky-tech",
+      "siteId": "15677",
+      "siteStatus": "Active",
+      "siteURL": "skyroc.webex.com.cn"
+    },
+    {
+      "companyName": "长白朝鲜族自治县北疆硅藻土新材料科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "23122",
+      "siteStatus": "Active",
+      "siteURL": "beijianggzn.webex.com.cn"
+    },
+    {
+      "companyName": "闽侯县东佑电子贸易有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20942",
+      "siteStatus": "Active",
+      "siteURL": "fce.webex.com.cn"
+    },
+    {
+      "companyName": "阳光金网科技",
+      "partnerName": "sky-tech",
+      "siteId": "26062",
+      "siteStatus": "Active",
+      "siteURL": "goldsunshine1.webex.com.cn"
+    },
+    {
+      "companyName": "阿如拉藏医药集团有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22762",
+      "siteStatus": "Active",
+      "siteURL": "arura.webex.com.cn"
+    },
+    {
+      "companyName": "陕西秦翼智能科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "22017",
+      "siteStatus": "Active",
+      "siteURL": "ecmc320160517001.webex.com.cn"
+    },
+    {
+      "companyName": "雅芳（中国）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "19837",
+      "siteStatus": "Active",
+      "siteURL": "avon.webex.com.cn"
+    },
+    {
+      "companyName": "集丰怡上海",
+      "partnerName": "sky-tech",
+      "siteId": "26357",
+      "siteStatus": "Active",
+      "siteURL": "arkardin.webex.com.cn"
+    },
+    {
+      "companyName": "集丰怡网络科技（北京）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26202",
+      "siteStatus": "Active",
+      "siteURL": "sanymt.webex.com.cn"
+    },
+    {
+      "companyName": "集丰怡网络科技（北京）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26412",
+      "siteStatus": "Active",
+      "siteURL": "megasoft.webex.com.cn"
+    },
+    {
+      "companyName": "集丰怡网络科技（北京）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "26652",
+      "siteStatus": "Active",
+      "siteURL": "jsqj.webex.com.cn"
+    },
+    {
+      "companyName": "青岛吾诺机电科技有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21062",
+      "siteStatus": "Active",
+      "siteURL": "gtp-schaefer.webex.com.cn"
+    },
+    {
+      "companyName": "青岛永拓汇通商贸有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "16637",
+      "siteStatus": "Active",
+      "siteURL": "leiyin.webex.com.cn"
+    },
+    {
+      "companyName": "青岛永拓汇通商贸有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "18562",
+      "siteStatus": "Active",
+      "siteURL": "maxsun.webex.com.cn"
+    },
+    {
+      "companyName": "青蛙王子（中国）日化有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "21332",
+      "siteStatus": "Active",
+      "siteURL": "princefrog.webex.com.cn"
+    },
+    {
+      "companyName": "飞毛腿(福建)电子有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "18977",
+      "siteStatus": "Active",
+      "siteURL": "scud.webex.com.cn"
+    },
+    {
+      "companyName": "飞毛腿(福建)电子有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20312",
+      "siteStatus": "Active",
+      "siteURL": "scudvip.webex.com.cn"
+    },
+    {
+      "companyName": "飞鸟服饰",
+      "partnerName": "sky-tech",
+      "siteId": "26497",
+      "siteStatus": "Active",
+      "siteURL": "feiniao.webex.com.cn"
+    },
+    {
+      "companyName": "马俊海",
+      "partnerName": "sky-tech",
+      "siteId": "18762",
+      "siteStatus": "Active",
+      "siteURL": "tmtsz.webex.com.cn"
+    },
+    {
+      "companyName": "高威电信（广州）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "17907",
+      "siteStatus": "Active",
+      "siteURL": "parknshop.webex.com.cn"
+    },
+    {
+      "companyName": "高威电信（广州）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20742",
+      "siteStatus": "Active",
+      "siteURL": "dafycredit.webex.com.cn"
+    },
+    {
+      "companyName": "高威电信（广州）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20747",
+      "siteStatus": "Active",
+      "siteURL": "giveu.webex.com.cn"
+    },
+    {
+      "companyName": "高威电信（广州）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20787",
+      "siteStatus": "Active",
+      "siteURL": "dafycreditsz.webex.com.cn"
+    },
+    {
+      "companyName": "高威电信（广州）有限公司",
+      "partnerName": "sky-tech",
+      "siteId": "20792",
+      "siteStatus": "Active",
+      "siteURL": "giveusz.webex.com.cn"
+    },
+    {
+      "companyName": "高建棋",
+      "partnerName": "sky-tech",
+      "siteId": "24132",
+      "siteStatus": "Active",
+      "siteURL": "tshq.webex.com.cn"
+    }
+  ],
+  "totalResults": "693",
+  "totalResultsInThisPage": "93"
+}
+
+

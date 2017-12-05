@@ -1,0 +1,142 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>月账单 </title>
+    <style type="text/css">
+        * {
+            font-family: "SimSun";
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        p.title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: bold;
+        }
+
+        p.subtitle {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            -fs-table-paginate: paginate;
+            border-spacing: 0;
+            table-layout: fixed;
+        }
+
+        table.details {
+            table-layout: auto;
+        }
+
+        table td, table th {
+            -fs-keep-with-inline: keep;
+            font-weight: normal;
+            line-height: 15px;
+            border: 0;
+            border-bottom: .1px solid #000;
+        }
+
+        table td:first-child, table th:first-child {
+            padding-left: 2px;
+        }
+
+        table thead tr td, table thead tr th {
+            background: #acf;
+            text-align: left;
+        }
+
+        table thead tr:nth-child(2) td, table thead tr:nth-child(2) th {
+            background: #ccc;
+        }
+
+        td.ta-l, th.ta-l {
+            text-align: left;
+        }
+
+        td.ta-c, th.ta-c {
+            text-align: center;
+        }
+
+        td.ta-r, th.ta-r {
+            text-align: right;
+        }
+
+        td:last-child.ta-r, th:last-child.ta-r {
+            padding-right: 2px;
+        }
+
+        table.page-header {
+            width: 100%;
+            color: #888;
+        }
+
+        table.page-header td {
+            border: 0;
+        }
+
+        table.recp-info {
+            width: auto;
+            font-size: inherit;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+        table.recp-info td {
+            border: 0;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        /*div.page-header {*/
+        /*padding: 10px 0;*/
+        /*display: block;*/
+        /*position: running(header);*/
+        /*color: #888;*/
+        /*}*/
+
+        /*div.page-header td {*/
+        /*border: 0;*/
+        /*}*/
+
+        /*div.page-header td:last-child {*/
+        /*text-align: right;*/
+        /*}*/
+
+        /*@page {*/
+        /*margin: 50px;*/
+        /*@top-center {*/
+        /*content: element(header)*/
+        /*}*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+##<div class="page-header">
+##    <table class="page-header">
+##        <tr>
+##            <td>${config.payeeName}</td>
+##            <td>账单编号：${config.billNo}</td>
+##        </tr>
+##    </table>
+##</div>
+
+    #parse("summary.vm")
+    #parse("statistics.vm")
+    #parse("details.vm")
+</body>
+</html>

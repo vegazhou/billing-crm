@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="ccaportal-ajax.js" ></script>
+<title>111</title>
+
+
+</head>
+<body class="">
+		
+				
+	<script type="text/javascript">
+		
+		ccaportal.ajax.callAPI({
+							type: "GET",
+							url: "/api/v1/areas/0/subareas11",							
+							contentType: "application/json; charset=utf-8",						
+							dataType: "json",
+							success: function(result){	
+								  console.log("pagesuccess",result);
+								  	
+							},
+							error: function(errMsg) {
+								console.log("pagefailed",errMsg);
+							}
+					  },"123455666");
+	</script>
+	<!-- Ajax Delete Example End -->
+</body>
+</html>

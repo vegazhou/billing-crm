@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+target
+.idea
+*.iml
+
+**/wang/huaichao/**/[Tt]emp*
+**/wang/huaichao/**/[Ii]gn*
+**/wang/huaichao/temp/
+*.log

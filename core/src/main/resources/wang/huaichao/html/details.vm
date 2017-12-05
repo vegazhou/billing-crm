@@ -1,0 +1,68 @@
+<p class="page-break"></p>
+<p class="title">${config.payeeName}服务详单</p>
+
+#set($usageDetails = $config.usageDetails)
+
+#set($hostDetailsMap = $usageDetails.hostDetailsMap)
+
+#if($hostDetailsMap.size() > 0)
+
+## host map loop
+## ============================================================
+    #foreach($h_entry in $hostDetailsMap.entrySet())
+        #set($hostDetails = $h_entry.value)
+        #set($meetingDetailsMap = $hostDetails.meetingDetailsMap)
+
+    <p style="color: #06f; font-size: 1.5em;">$hostDetails.userName（$hostDetails.hostName）的会议记录</p>
+
+    ## meeting map loop
+    ## ============================================================
+        #foreach($m_entry in $meetingDetailsMap.entrySet())
+            #set($meetingDetails = $m_entry.value)
+
+        <p style="color: #222;">
+            场次：$velocityCount，
+            会议号码：$meetingDetails.confId，
+            会议主题：$esc.xml($meetingDetails.confName)，
+            站点名称：$hostDetails.siteName
+        </p>
+        <table>
+            <thead>
+            <tr>
+                <td>开始时间</td>
+                <td>结束时间</td>
+                <td style="width: 80px;">参会人号码</td>
+                <td style="width: 80px;">平台接入号码</td>
+                <td>接入类型</td>
+                <td class="ta-r" style="width: 80px">时长（分钟）</td>
+                <td class="ta-r" style="width: 60px;">金额（元）</td>
+            </tr>
+            </thead>
+            <tbody>
+            ## meeting records loop
+            ## ============================================================
+                #foreach($record in $meetingDetails.meetingRecords)
+                <tr>
+                    <td>$dateTool.format('yy-MM-dd HH:mm:ss', $record.startTime)</td>
+                    <td>$dateTool.format('yy-MM-dd HH:mm:ss',$record.endTime)</td>
+                    <td>$record.userNumber</td>
+                    <td>$record.accessNumber</td>
+                    <td>$record.accessType</td>
+                    <td class="ta-r">$numberTool.format('#,###', $record.duration)</td>
+                    <td class="ta-r">$numberTool.format('#,##0.00', $record.cost)</td>
+                </tr>
+                #end
+
+            <tr>
+                <td colspan="6">小计：</td>
+                <td class="ta-r">$numberTool.format('#,##0.00', $meetingDetails.cost.floatValue())</td>
+            </tr>
+            </tbody>
+        </table>
+
+        #end
+
+    <p class="page-break"></p>
+    <br/>
+    #end
+#end

@@ -1,0 +1,118 @@
+<html>
+<head>
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+   
+     <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript">
+    var cookie=$.cookie('iPlanetDirectoryPro');
+
+	//location.href=adminContextPath+"/sso?mu=orgadmin";
+	console.log("-----------",cookie);
+        function formatHeaders(input) {
+            var a1 = input.split('\n');
+            var result = [];
+            for ( var i = 0; i < a1.length; i++) {
+                result.push(a1[i].split(':'));
+            }
+            return result;
+        }
+
+        $(function() {
+            $('#headers')
+                    .val(
+                            [
+                                'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                                'Accept-Language:en-us,en;q=0.5','Content-Type:application/json' ].join('\r\n'));
+            $('#clear').click(function() {
+                $('#run').attr('disabled', false);
+                $('#readyState,#status,#responseText,#responseHeader').text('');
+            });
+            $('#run').click(function() {
+                $('#run').attr('disabled', true);
+                var xhr = new XMLHttpRequest();
+                var method = $('#method').val();
+                var url = $.trim($('#url').val());
+                var headers = formatHeaders($.trim($('#headers').val()));
+                xhr.open(method, url, true);
+                xhr.withCredentials = true;
+                for ( var i = 0; i < headers.length; i++) {
+                    var header = headers[i];
+                    if (header instanceof Array && header.length > 1) {
+                        xhr.setRequestHeader(header[0], header[1]);
+                    }
+                }
+                xhr.onreadystatechange = function() {
+                    var readyState = xhr.readyState;
+                    if (readyState == 4) {
+                        $('#run').attr('disabled', false);
+                        var status = xhr.status;
+                        $('#status').text(status);
+                        if (status == 200 ||400) {
+                        	var obj2 = $.parseJSON( xhr.responseText )
+    						$('#responseText').text(JSON.stringify(obj2, null, 4));
+                        }
+                        $('#responseHeader').text(xhr.getAllResponseHeaders());
+                    }
+                };
+                var body = $.trim($('#body').val());
+                xhr.send((body === '') ? null : body);
+            });
+            $("#url").attr("value", window.location.origin + "/" + window.location.pathname.split("/")[1] + "/v1/areas/0/subareas");
+        });
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td align="right">Method</td>
+        <td>
+            <select id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="DELETE">DELETE</option>
+                <option value="PUT">PUT</option>
+                <option value="PATCH">PATCH</option>
+                <option value="HEAD">HEAD</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">URL</td>
+        <td><input id="url" type="text" size="140" value="http://localhost:8080/api/v1/areas/0/subareas" /></td>
+    </tr>
+    <tr>
+        <td align="right">Headers</td>
+        <td><textarea id="headers" rows="6" cols="140"></textarea></td>
+    </tr>
+    <tr>
+        <td align="right">Body</td>
+        <td><textarea id="body" rows="10" cols="140"></textarea></td>
+    </tr>
+    <tr>
+        <td align="right"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input id="run" type="button" value="Test" />
+            <input id="clear" type="button" value="Clear Output" />
+        </td>
+    </tr>
+</table>
+
+<div>
+    <div>
+        status:
+        <span id="status"></span>
+    </div>
+    <div>
+        responseText:
+        <pre id="responseText"></pre>
+    </div>
+    <div>
+        header:
+        <pre id="responseHeader"></pre>
+    </div>    
+</div>
+</body>
+</html>

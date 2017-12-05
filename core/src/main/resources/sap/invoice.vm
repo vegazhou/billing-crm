@@ -1,0 +1,124 @@
+<table class="page-header">
+    <tr>
+        <td class="ta-l">客户编号：${customerCode}</td>
+        <td class="ta-r">账单编号：${invoiceName}</td>
+    ##        <td class="ta-r">账单日期：$config.billDate</td>
+    </tr>
+</table>
+
+<br/><br/><br/>
+
+<table class="recp-info">
+    <tr>
+        <td>客户名称：</td>
+        <td>${customerName}</td>
+    </tr>
+    <tr>
+        <td>联系人：</td>
+        <td>${customerContact}</td>
+    </tr>
+</table>
+
+
+<p class="title">${customerName}通讯服务账单</p>
+
+<p class="subtitle">账单总览</p>
+
+
+<br/><br/><br/>
+计费周期：${startTime} 至 ${endTime}
+<br/><br/><br/>
+
+
+
+<br/><br/><br/>
+
+
+<table class='MsoNormalTable' border='0' cellspacing='0' cellpadding='0' width='624'
+       style='width:467.8pt;margin-left:-.4pt;border-collapse:collapse'>
+    <tr style='height:22.5pt'>
+        <td style='border:inset black 1.0pt;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>产品名称<span
+                    ></span></span></b></p>
+        </td>
+        <td width='121'
+            style='width:90.9pt;border:inset black 1.0pt;border-left:none;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>计费开始时间<span
+                    ></span></span></b></p>
+        </td>
+        <td width='132'
+            style='width:99.2pt;border:inset black 1.0pt;border-left:none;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>计费结束时间<span
+                    ></span></span></b></p>
+        </td>
+        <td width='123'
+            style='width:92.15pt;border:inset black 1.0pt;border-left:none;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>应付金额<span
+                    ></span></span></b></p>
+        </td>
+        <td width='76'
+            style='width:56.75pt;border:inset black 1.0pt;border-left:none;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>已预付金额<span
+                    ></span></span></b></p>
+        </td>
+        <td width='76'
+            style='width:2.0cm;border:inset black 1.0pt;border-left:none;background:#D58D45;padding:0cm 0cm 0cm 0cm;height:22.5pt'>
+            <p class='MsoNormal' align='center' style='text-align:center'><b><span style='font-size:11.5pt'>待付款总金额<span
+                    ></span></span></b></p>
+        </td>
+    </tr>
+    #foreach( $row in $rows)
+
+    <tr style='height:22.5pt'>
+
+        <td style='border:inset black 1.0pt;border-top:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${row.product}</span></p>
+        </td>
+        <td width='121'
+            style='width:90.9pt;border:inset black 1.0pt;border-left:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${row.effectiveStartDate}</span></p>
+        </td>
+        <td width='132'
+            style='width:99.2pt;border:inset black 1.0pt;border-left:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${row.effectiveEndDate}</span></p>
+        </td>
+        <td width='123'
+            style='width:92.15pt;border:inset black 1.0pt;border-left:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${row.firstInstallment}</span></p>
+        </td>
+        <td width='76'
+            style='width:56.75pt;border:inset black 1.0pt;border-left:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>0</span></p>
+        </td>
+        <td width='76'
+            style='width:2.0cm;border:inset black 1.0pt;border-left:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${row.firstInstallment}</span></p>
+        </td>
+    </tr>
+
+
+    #end
+    <tr style='height:22.5pt'>
+        <td style='border:inset black 1.0pt;border-top:none;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span style='font-size:11.5pt'>合计<span ></span></span></p>
+        </td>
+        <td width='121'
+            style='width:90.9pt;border-top:none;border-left:none;border-bottom:inset black 1.0pt;border-right:inset black 1.0pt;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'></td>
+        <td width='132'
+            style='width:99.2pt;border-top:none;border-left:none;border-bottom:inset black 1.0pt;border-right:inset black 1.0pt;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'></td>
+        <td width='123'
+            style='width:92.15pt;border-top:none;border-left:none;border-bottom:inset black 1.0pt;border-right:inset black 1.0pt;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${summary.firstInstallment}</span></p>
+        </td>
+        <td width='76'
+            style='width:56.75pt;border-top:none;border-left:none;border-bottom:inset black 1.0pt;border-right:inset black 1.0pt;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>0</span></p>
+        </td>
+        <td width='76'
+            style='width:2.0cm;border-top:none;border-left:none;border-bottom:inset black 1.0pt;border-right:inset black 1.0pt;padding:0cm 12.0pt 0cm 12.0pt;height:22.5pt'>
+            <p class='MsoNormal'><span  style='font-size:11.5pt'>${summary.firstInstallment}</span></p>
+        </td>
+    </tr>
+</table>
+<p class="page-break"></p>
+

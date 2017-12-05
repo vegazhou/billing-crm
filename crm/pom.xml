@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+        <groupId>com.kt.billing</groupId>
+        <artifactId>billing</artifactId>
+		<version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+	
+	
+	<artifactId>crm</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+    <profiles>
+        <profile>
+            <id>szdev</id>
+            <properties>
+                <profiles.active>szdev</profiles.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>gztest</id>
+            <properties>
+                <profiles.active>gztest</profiles.active>
+            </properties>
+        </profile>
+		<profile>
+			<id>gzpdt</id>
+			<properties>
+				<profiles.active>gzpdt</profiles.active>
+			</properties>
+		</profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>sz-releases</id>
+            <name>Suzhou Local Repository</name>
+            <url>http://10.10.10.10/repository/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sz-snapshots</id>
+            <name>Suzhou Local Repository</name>
+            <url>http://10.10.10.10/repository/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+	<dependencies>
+
+
+		<!-- SERVLET START -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+		<!-- SERVLET END -->
+
+
+		<!-- freemarker end -->
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>1.1.2</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+
+	<build>
+		<finalName>crm</finalName>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>web</directory>
+							<excludes>
+								<exclude>**/szdev/*</exclude>
+								<exclude>**/gztest/*</exclude>
+								<exclude>**/gzpdt/*</exclude>
+								<exclude>**/static.js</exclude>
+							</excludes>
+						</resource>
+						<resource>
+							<directory>web/static/js/common/${profiles.active}</directory>
+							<targetPath>./static/js/common</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

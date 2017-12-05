@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] - [%C{1}:%L] [%p] %X{remote.host} %X{remote.address} %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG"/>
+            <param name="LevelMax" value="ERROR"/>
+        </filter>
+    </appender>
+
+    <appender name="DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="ImmediateFlush" value="true"/>
+        <param name="File" value="/data/logs/kt/billing_core_debug.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%t] [%C{1}:%L] %-5p %c %x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG"/>
+            <param name="LevelMax" value="DEBUG"/>
+        </filter>
+    </appender>
+
+    <appender name="INFO" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="ImmediateFlush" value="true"/>
+        <param name="File" value="/data/logs/kt/billing_core_info.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%t][%C{1}:%L] %-5p %c %x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO"/>
+            <param name="LevelMax" value="INFO"/>
+        </filter>
+    </appender>
+    <appender name="ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="ImmediateFlush" value="true"/>
+        <param name="File" value="/data/logs/kt/billing_core_error.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss} [%t][%C{1}:%L] %-5p %c %x - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="WARN"/>
+            <param name="LevelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <appender name="EVENTLOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="ImmediateFlush" value="true"/>
+        <param name="File" value="/data/logs/kt/billing_core_eventlog.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="BufferedIO" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="TRACE"/>
+            <param name="LevelMax" value="TRACE"/>
+        </filter>
+    </appender>
+
+    <logger name="com.kt.api.controller.BaseController">
+        <level value="trace"/>
+        <appender-ref ref="EVENTLOG"/>
+    </logger>
+
+    <logger name="com.kt">
+        <level value="debug"/>
+    </logger>
+
+    <root>
+        <priority value="warn"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="DEBUG"/>
+        <appender-ref ref="ERROR"/>
+        <appender-ref ref="INFO"/>
+    </root>
+</log4j:configuration>

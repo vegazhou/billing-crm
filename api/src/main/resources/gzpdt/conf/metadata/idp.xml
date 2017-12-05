@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EntityDescriptor entityID="idp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+    <IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIICcjCCAdugAwIBAgIEYJeozTANBgkqhkiG9w0BAQsFADBsMQswCQYDVQQGEwJ6aDESMBAGA1UE
+                        CBMJZ3Vhbmdkb25nMRIwEAYDVQQHEwlndWFuZ3pob3UxEjAQBgNVBAoTCWtldGlhbnl1bjENMAsG
+                        A1UECxMEdGVjaDESMBAGA1UEAxMJa2V0aWFueXVuMB4XDTE1MDgyOTE1NTcyOFoXDTIwMDgzMDE1
+                        NTcyOFowbDELMAkGA1UEBhMCemgxEjAQBgNVBAgTCWd1YW5nZG9uZzESMBAGA1UEBxMJZ3Vhbmd6
+                        aG91MRIwEAYDVQQKEwlrZXRpYW55dW4xDTALBgNVBAsTBHRlY2gxEjAQBgNVBAMTCWtldGlhbnl1
+                        bjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAlIR5ntvyTMCVhgGQ3+U48DTemg8V0csj+hdd
+                        oUZ79jQrVwjIEc1+t5Jhq+bumTndOkal+dhH8mdUDq3W0elQ3gGwjUqQGMx7OnshJEI+olj2uPPQ
+                        1qQ33vZESFzyQN++LZlZPD3aIJXdw6bKeYqfo4TSrM8SS1vZFZBkN8n3LJMCAwEAAaMhMB8wHQYD
+                        VR0OBBYEFH4vbiJRDjf10JFAFM9QbwI1LYrNMA0GCSqGSIb3DQEBCwUAA4GBAAyOeuaVJbTDtkdV
+                        lItl741Cnu1q3F+M+Omh8AIcMGLehG0tC7FFEtCKOY8yVHP62fy4oRqhxMy3N1Ayh3vPmT25YxF5
+                        QtoiteMIViWkpae5sfxYtU3K2Eiaa1Kt1kGyXAFFaoXcPTx6590bC+JLc/Q46wpxAV0tP1V4396W
+                        0trf
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <ArtifactResolutionService index="0" isDefault="false" Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/ArtifactResolver/metaAlias/idp"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ci.ketianyun.com/sso/IDPSloRedirect/metaAlias/idp" ResponseLocation="https://ci.ketianyun.com/sso/IDPSloRedirect/metaAlias/idp"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ci.ketianyun.com/sso/IDPSloPOST/metaAlias/idp" ResponseLocation="https://ci.ketianyun.com/sso/IDPSloPOST/metaAlias/idp"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/IDPSloSoap/metaAlias/idp"/>
+        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ci.ketianyun.com/sso/IDPMniRedirect/metaAlias/idp" ResponseLocation="https://ci.ketianyun.com/sso/IDPMniRedirect/metaAlias/idp"/>
+        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ci.ketianyun.com/sso/IDPMniPOST/metaAlias/idp" ResponseLocation="https://ci.ketianyun.com/sso/IDPMniPOST/metaAlias/idp"/>
+        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/IDPMniSoap/metaAlias/idp"/>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ci.ketianyun.com/sso/SSORedirect/metaAlias/idp"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ci.ketianyun.com/sso/SSOPOST/metaAlias/idp"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/SSOSoap/metaAlias/idp"/>
+        <NameIDMappingService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/NIMSoap/metaAlias/idp"/>
+        <AssertionIDRequestService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ci.ketianyun.com/sso/AIDReqSoap/IDPRole/metaAlias/idp"/>
+        <AssertionIDRequestService Binding="urn:oasis:names:tc:SAML:2.0:bindings:URI" Location="https://ci.ketianyun.com/sso/AIDReqUri/IDPRole/metaAlias/idp"/>
+    </IDPSSODescriptor>
+</EntityDescriptor>
+

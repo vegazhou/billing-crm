@@ -1,0 +1,162 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>月账单 </title>
+    <style type="text/css">
+        * {
+            font-family: "SimSun";
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        p.title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: bold;
+        }
+
+        p.subtitle {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            -fs-table-paginate: paginate;
+            border-spacing: 0;
+            table-layout: fixed;
+        }
+
+        table.details {
+            table-layout: auto;
+        }
+
+        table td, table th {
+            -fs-keep-with-inline: keep;
+            font-weight: normal;
+            line-height: 15px;
+            border: 0;
+            border-bottom: .1px solid #000;
+        }
+
+        table td:first-child, table th:first-child {
+            padding-left: 2px;
+        }
+
+        table thead tr td, table thead tr th {
+            background: #acf;
+            text-align: left;
+        }
+
+        table thead tr:nth-child(2) td, table thead tr:nth-child(2) th {
+            background: #ccc;
+        }
+
+        td.ta-l, th.ta-l {
+            text-align: left;
+        }
+
+        td.ta-c, th.ta-c {
+            text-align: center;
+        }
+
+        td.ta-r, th.ta-r {
+            text-align: right;
+        }
+
+        td:last-child.ta-r, th:last-child.ta-r {
+            padding-right: 2px;
+        }
+
+        table.page-header {
+            width: 100%;
+            color: #888;
+        }
+
+        table.page-header td {
+            border: 0;
+        }
+
+        table.recp-info {
+            width: auto;
+            font-size: inherit;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+        table.recp-info td {
+            border: 0;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        /*div.page-header {*/
+        /*padding: 10px 0;*/
+        /*display: block;*/
+        /*position: running(header);*/
+        /*color: #888;*/
+        /*}*/
+
+        /*div.page-header td {*/
+        /*border: 0;*/
+        /*}*/
+
+        /*div.page-header td:last-child {*/
+        /*text-align: right;*/
+        /*}*/
+
+        /*@page {*/
+        /*margin: 50px;*/
+        /*@top-center {*/
+        /*content: element(header)*/
+        /*}*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+
+
+${content}
+注：
+<br/><br/>
+1、上述款项单位均为人民币“元”；
+<br/>
+2、其他费用指：配置费用、其他增值费中的一项或几项，具体项目详见“账单明细”及“详单”；
+<br/><br/><br/>
+如贵公司对上述内容存在异议，请于收到账单后3个工作日内书面提出，否则视为认同上述内容。
+<br/>
+请贵公司于上述内容确认无误后2个工作日内支付相应款项。
+<br/><br/><br/><br/><br/><br/>
+
+<table class="recp-info">
+    <tr>
+        <td>收款方名：</td>
+        <td>广州科天视畅信息科技有限公司</td>
+    </tr>
+    <tr>
+        <td>开户银行：</td>
+        <td>中国建设银行广州凯得广场支行</td>
+    </tr>
+    <tr>
+        <td>银行账号：</td>
+        <td>4400 1101 9040 5250 0295</td>
+    </tr>
+    <tr>
+        <td>地　　址：</td>
+        <td>广州市科学城科学大道187号 科学城商业广场A2栋8楼</td>
+    </tr>
+</table>
+</body>
+</html>

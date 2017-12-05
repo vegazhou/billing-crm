@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        td {
+            line-height: 30px;
+            font-family: "微软雅黑", "MicroSoft YaHei", "宋体";
+            font-size: 14px;
+        }
+
+        b {
+            color: #f33;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <table width="600" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td>
+                <img src="http://www.ketianyun.com/documents/11909/50237/logo/94bf6f9e-e2d4-4719-80ce-7d9898c6e98f?t=1440840194607">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br/>
+                <br/>
+
+                <h1 style="color:#2b0;font-weight:normal;margin:0;padding:0;">账单提醒</h1>
+
+                <br/>
+                <br/>
+
+                您 <b>${date_cn}</b> 的账单已准备妥当，请查阅本期账单。谢谢！
+                如有账单方面的疑问，请及时联系科天客户服务人员（400-9308838）。
+
+                <br/>
+                <br/>
+
+                Your bill of <b>${date_en}</b> is ready, please check current bill. Thanks!
+
+                <br/>
+                <br/>
+                <br/>
+
+                <img src="http://www.ketianyun.com/documents/11909/50237/bottom/590340eb-a5d9-4c81-84ae-7049bb0825e1?t=1440840217362">
+
+                <br/>
+                <br/>
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;color:#888;">
+                此邮件为系统邮件，请勿直接回复。
+
+                <br/>
+
+                如需进一步了解科天云，请访问：<a href="http://www.ketianyun.com/">www.ketianyun.com</a>
+
+                <br/>
+
+                如有任何疑问，请拨打客服电话：400-9308838
+
+                <br/><br/>
+
+                Copyright © 2016 广州科天视畅信息科技有限公司. All rights reserved.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

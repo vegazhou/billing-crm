@@ -1,0 +1,30 @@
+<serv:message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:serv="http://www.webex.com/schemas/2002/06/service">
+    <header>
+        <securityContext>
+            <siteName>ectest</siteName>
+            <webExID>wbxadmin</webExID>
+            <sessionTicket>
+                AAABUNWQ+a0AABUYA0gAKEgyU0sAAAACS8yVuZhBkOlChyBGbGCQe0zZLVuQolCbP5yWrHNHgxRBSAA8U0sAAAACtx8h0XD5lu6XubL4H3bAPi5Mx4ZP/4FN2nfFM/g8cjfwdP3QjNS3rLMR667x8TlqXPgvOnLfQVLp0/v78F2n50eRYJ8K5Z2y2/XAo8U1XMm+PSEg5GHsWtjozakTcdLNoZIDPLsoxXNr1BmqWAslNwOzZWsTWsuh7MaKGOJRsCT+4om7j9CxLWcG0QX4XG5NKRdUxyvRn1emGRslbbmm7k8HFG0UAWcAQYIhpHG5i3lfRkxBR19BRERJTkdfU0hBMjU2X0FMR09SSVRITV8=
+            </sessionTicket>
+        </securityContext>
+    </header>
+    <body>
+        <bodyContent xsi:type="java:com.webex.service.binding.user.SetUser">
+            <firstName>卡飞机的旅客</firstName>
+            <lastName>卡飞机的旅客</lastName>
+            <webExId>u3@ceshi1.com</webExId>
+            <email>u3@ceshi1.com</email>
+            <password>111111</password>
+            <supportedServicesType>
+                <meetingCenter>true</meetingCenter>
+                <eventCenter>true</eventCenter>
+                <trainingCenter>false</trainingCenter>
+                <supportCenter>false</supportCenter>
+            </supportedServicesType>
+            <privilege>
+                <isEnablePMR>true</isEnablePMR>
+            </privilege>
+        </bodyContent>
+    </body>
+</serv:message>
